@@ -5,7 +5,7 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js'
 const canvas = document.querySelector('#webgl');
 const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias:true});
 renderer.setSize( window.innerWidth - 25, window.innerHeight - 25);
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.LinearEncoding = THREE.SRGBColorSpace;
 
 const scene = new THREE.Scene()
 // scene.background = new THREE.Color(0xFFB5D4D6);
@@ -63,8 +63,8 @@ controls.mouseButtons = {
 };
 
 // Enable rotation
-controls.autoRotate = true;
 // The speed at which the object rotates, in degrees per frame.
+controls.autoRotate = true;
 controls.autoRotateSpeed = -0.5; // 30 seconds per round when fps is 60
 
 function animate() {

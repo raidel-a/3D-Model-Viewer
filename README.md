@@ -5,8 +5,9 @@ This project is an interactive 3D model viewer built with Three.js. It allows yo
 
 ## Installation
 1. Clone this repository.
-2. Install the necessary dependencies
-3. Run the project 
+2. Install the necessary dependencies: npm install, npm install three
+      npm create vite@latest
+3. Run the project: npm run dev
 
 ## Usage
 Open the web page in your browser. You can interact with the 3D model using your mouse:
@@ -45,3 +46,5 @@ https://threejs.org/docs/?q=orbit#examples/en/controls/OrbitControls.autoRotate
 https://threejs.org/docs/?q=orbit#examples/en/controls/OrbitControls.listenToKeyEvents
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
+
+https://www.coding-dude.com/wp/wp-content/uploads/2020/09/HTML5-canvas-cheat-sheet.pdf
