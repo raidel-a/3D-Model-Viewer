@@ -1,7 +1,7 @@
 {
   "homepage": "https://raihven.github.io/3D-Model-Viewer/",
   "name": "3d-viewer",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
