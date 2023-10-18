@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/public/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Viewer</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <canvas id="webgl"></canvas>
+    <select aria-label="Model Selector" id="modelSelector" class="model-selector">
+      <!-- <option value="">Select A Model</option> -->
+      <option value="/assets/models/Wellhead.glb">Wellhead</option>
+      <option value="/assets/models/BurgerMan.glb">Burger</option>
+      <option value="/assets/models/Artemis.glb">Artemis</option>
+      <option value="/assets/models/BustPerikles.glb">Bust of Perikles</option>
+      <option value="/assets/models/Thinker.glb">Thinker</option>
+      <!-- <option value="/assets/models/AANozzleV3.glb">Laser Nozzle</option> -->
+    </select>
+    <button id="toggleRotation" class="rotation-button">Toggle Rotate</button>
+    </style>
+    
+    <script type="module" src="/main.js"></script>
+    
+  </body>
+</html>

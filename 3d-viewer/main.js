@@ -10,18 +10,30 @@ const renderer = new THREE.WebGLRenderer({
   antialias: true,
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.LinearEncoding= THREE.SRGBColorSpace;
+renderer.outputColorSpace= THREE.SRGBColorSpace;
 
 const scene = new THREE.Scene();
+
+const geometry = new THREE.SphereGeometry( 100, 100, 100 );
+
+const wireframe = new THREE.WireframeGeometry( geometry );
+
+const line = new THREE.LineSegments( wireframe );
+line.material.depthTest = true;
+line.material.opacity = 0.25;
+line.material.transparent = true;
+
+scene.add( line );
+
 // scene.background = new THREE.Color(0xFFB5D4D6);
-const textureLoader = new THREE.TextureLoader(); // Load and set the texture
-textureLoader.load("./src/assets/images/Grid.png", function (texture) {
-  scene.background = texture;
-});
+// const textureLoader = new THREE.TextureLoader(); // Load and set the texture
+// textureLoader.load("/assets/images/Grid.png", function (texture) {
+//   scene.background = texture;
+// });
 
 const camera = new THREE.PerspectiveCamera(
   45,
-  window.innerWidth / window.innerHeight
+  window.outerWidth / window.outerHeight
 );
 camera.position.set(1, 1, 1);
 
@@ -61,8 +73,8 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 2);
 scene.add(ambientLight);
 
 const controls = new OrbitControls(camera, webglCanvas);
-controls.autoRotate = true;
-controls.autoRotateSpeed = 1;
+controls.autoRotate = false;
+controls.autoRotateSpeed = 0.15;
 controls.enableDamping = true;
 controls.rotationSpeed = 0.5;
 controls.mouseButtons = {
