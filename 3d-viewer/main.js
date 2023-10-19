@@ -1,8 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-// import { TrackballControls } from "three/addons/controls/TrackballControls.js";
-//trackball does not support .autoRotate
+import { configureScene } from "./sceneConfig.js";
 
 const webglCanvas = document.querySelector("#webgl");
 const renderer = new THREE.WebGLRenderer({
@@ -10,30 +9,14 @@ const renderer = new THREE.WebGLRenderer({
   antialias: true,
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.outputColorSpace= THREE.SRGBColorSpace;
+renderer.LinearEncoding = THREE.SRGBColorSpace;
 
 const scene = new THREE.Scene();
-
-const geometry = new THREE.SphereGeometry( 100, 100, 100 );
-
-const wireframe = new THREE.WireframeGeometry( geometry );
-
-const line = new THREE.LineSegments( wireframe );
-line.material.depthTest = true;
-line.material.opacity = 0.25;
-line.material.transparent = true;
-
-scene.add( line );
-
-// scene.background = new THREE.Color(0xFFB5D4D6);
-// const textureLoader = new THREE.TextureLoader(); // Load and set the texture
-// textureLoader.load("/assets/images/Grid.png", function (texture) {
-//   scene.background = texture;
-// });
+configureScene(scene);
 
 const camera = new THREE.PerspectiveCamera(
   45,
-  window.outerWidth / window.outerHeight
+  window.innerWidth / window.innerHeight
 );
 camera.position.set(1, 1, 1);
 
@@ -68,6 +51,9 @@ loadModel();
 
 // Add an event listener to the dropdown
 document.getElementById("modelSelector").addEventListener("change", loadModel);
+
+const hemiLight1 = new THREE.HemisphereLight(0xffffbb, 0x080820, 0.5);
+scene.add(hemiLight1);
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 2);
 scene.add(ambientLight);
