@@ -1,0 +1,31 @@
+
+1. **Rearranged and Modularized Code in `main.js`**:
+    - Modularized the code into separate functions for clarity and maintainability.
+    - Introduced a `setupCamera` function for camera configuration.
+    - Introduced a `setupControls` function for control setup.
+    - Moved model loading logic into a separate `loadModel` function.
+    - Moved the auto-rotate toggle logic into a separate `toggleAutoRotate` function.
+    - Modified the model loading to show a spinner during the loading process and error messages if there's an issue.
+  
+2. **Added Feedback Mechanisms**:
+    - Added a loading spinner (`loadingSpinner`) that displays while models are being loaded.
+    - Added an error message display (`errorMessage`) to notify users when there's an issue with model loading.
+    - Both of these are managed in the `loadModel` function.
+
+3. **Integrated `sceneConfig.js`**:
+    - Imported and used the `configureScene` function from `sceneConfig.js` to centralize scene configuration.
+
+4. **Model Selection Enhancement**:
+    - Stored the user's last selected model in the browser's local storage. When the user revisits the application, the previously viewed model is automatically selected and displayed.
+
+5. **Switched Render Mode Selection**:
+    - Changed render mode selection from a dropdown to individual buttons for a better user experience.
+    - Integrated logic to remember the user's last chosen render mode using local storage.
+
+6. **CSS Adjustments**:
+    - Adjusted styles to accommodate the new render mode buttons and added a visual indicator to show which mode is currently active.
+
+7. **Refactoring and Cleanup**:
+    - Removed any duplicated or unnecessary code to streamline the application.
+    - Ensured consistent and clear naming of variables and functions.
+    - Enhanced error handling for better user experience.

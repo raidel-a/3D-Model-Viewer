@@ -1,0 +1,8 @@
+[
+    { "name": "Wellhead", "path": "/assets/models/Wellhead.glb" },
+    { "name": "Burger", "path": "/assets/models/BurgerMan.glb" },
+    { "name": "Artemis", "path": "/assets/models/Artemis.glb" },
+    { "name": "Thinker", "path": "/assets/models/Thinker.glb" },
+    { "name": "Bust of Perikles", "path": "/assets/models/BustPerikles.glb" },
+    { "name": "Air Assist Nozzle", "path": "/assets/models/AANozzleV3.glb" }
+  ]
